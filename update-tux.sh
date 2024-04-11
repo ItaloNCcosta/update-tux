@@ -7,17 +7,17 @@ echo -e "\e[37;45m==============================================================
 echo -e "Olá Usuário, bem vindo ao utilitário de atualização.\nEsse script vai atualizar seus arquivos .deb, flatpaks e snaps \nO programa fechará automáticamente quando as atualizações forem concluídas. \nDigite sua senha para começar"
 
 #.deb
-echo "run sudo apt update"
+echo "sudo apt update"
 sudo apt update
 
-echo "run sudo apt full-upgrade"
+echo "sudo apt full-upgrade"
 sudo apt full-upgrade
 
-echo "run sudo apt dist-upgrade"
+echo "sudo apt dist-upgrade"
 sudo apt dist-upgrade
 
 #flatpak
-echo "run flatpak update"
+echo "flatpak update"
 flatpak update
 
 #snap
