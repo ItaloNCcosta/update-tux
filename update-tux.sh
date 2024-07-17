@@ -3,41 +3,43 @@
 # -*- ENCODING: UTF-8 -*-
 # Atualizador de Programas
 # Autor: Italo Nogueira
-# Ano: 2023
+# Ano: 2024
 
 printf "\e[01;37;45m========== ATUALIZADOR DE PROGRAMAS ==========\e[0m\n"
-printf "Autor: Italo Nogueira  / \nAno: 2023\n"
+printf "Autor: Italo Nogueira  / \nAno: 2024\n"
 printf "\e[37;45m====================================================================\e[0m\n"
-printf "Olá Usuário, bem-vindo ao utilitário de atualização.\n"
-printf "Esse script vai atualizar seus arquivos .deb, flatpaks e snaps.\n"
-printf "O programa fechará automaticamente quando as atualizações forem concluídas.\n"
+printf "Olá Usuário, bem-vindo ao utilitário de atualização.\e[0m\n"
+printf "Esse script vai atualizar seus arquivos .deb, flatpaks e snaps.\e[0m\n"
+printf "O programa fechará automaticamente quando as atualizações forem concluídas.\e[0m\n"
 printf "Digite sua senha para começar\n"
 
 # Atualização de pacotes .deb
-printf "\nAtualizando pacotes .deb...\n"
+printf "\n\e[44mAtualizando pacotes .deb...\e[0m\n"
 sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo apt clean
+
 if [ $? -eq 0 ]; then
-  printf "Pacotes .deb atualizados com sucesso.\n"
+  printf "\e[32mPacotes .deb atualizados com sucesso.\e[0m\n"
 else
   printf "\e[31mFalha na atualização dos pacotes .deb.\e[0m\n"
   exit 1
 fi
 
+
 # Atualização de pacotes flatpak
-printf "\nAtualizando pacotes flatpak...\n"
+printf "\n\e[44mAtualizando pacotes flatpak...\e[0m\n"
 flatpak update -y
 if [ $? -eq 0 ]; then
-  printf "Pacotes flatpak atualizados com sucesso.\n"
+  printf "\e[32mPacotes flatpak atualizados com sucesso.\e[0m\n"
 else
   printf "\e[31mFalha na atualização dos pacotes flatpak.\e[0m\n"
   exit 1
 fi
 
 # Atualização de pacotes snap
-printf "\nAtualizando pacotes snap...\n"
+printf "\n\e[44mAtualizando pacotes snap...\e[0m\n"
 sudo snap refresh
 if [ $? -eq 0 ]; then
-  printf "Pacotes snap atualizados com sucesso.\n"
+  printf "\e[32mPacotes snap atualizados com sucesso.\e[0m\n"
 else
   printf "\e[31mFalha na atualização dos pacotes snap.\e[0m\n"
   exit 1
